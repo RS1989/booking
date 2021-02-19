@@ -1,0 +1,8 @@
+version: '3.4'
+
+services:
+  cinema.shows.booking.api:
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+    ports:
+      - "80"

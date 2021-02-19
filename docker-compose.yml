@@ -1,0 +1,15 @@
+version: '3.4'
+
+services:
+  cinema.shows.booking.api:
+    image: ${DOCKER_REGISTRY-}cinemashowsbookingapi
+    build:
+      context: .
+      dockerfile: Cinema.Shows.Booking.Api/Dockerfile
+    environment:
+      db_con: Server=db;Database=master;User=sa;Password=p@sssw0rd;  
+  db:
+    image: "mcr.microsoft.com/mssql/server:2017-latest-ubuntu"
+    environment:
+      SA_PASSWORD: "p@sssw0rd"
+      ACCEPT_EULA: "Y"
